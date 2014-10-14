@@ -4,7 +4,6 @@ chai.Assertion.includeStack = true;
 require('chai').should();
 var expect = require('chai').expect;
 var nodePath = require('path');
-var fs = require('fs');
 
 var optimizerImagePlugin = require('../'); // Load this module just to make sure it works
 var optimizer = require('optimizer');
@@ -42,8 +41,9 @@ describe('optimizer-imagemin' , function() {
             if (err) {
                 return done(err);
             }
-            console.log('RESULT: ', result);
-            // setTimeout(done, 1400);
+            expect(result.outputFile).to.equal(
+                nodePath.join(__dirname, 'static/test-23919e20.gif'));
+
             done();
         });
     });

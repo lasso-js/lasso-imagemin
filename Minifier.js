@@ -38,8 +38,6 @@ function Minifier(pluginConfig) {
     var pluginsByPath = {};
     var basedir = process.cwd();
 
-    console.log('PLUGIN CONFIG: ', pluginConfig);
-
     function init() {
         var useArray = pluginConfig.use;
         if (Array.isArray(useArray)) {
@@ -107,12 +105,9 @@ function Minifier(pluginConfig) {
                     return initDataHolder.reject(err);
                 }
 
-                console.log('pluginsByPath: ', pluginsByPath);
-
                 initDataHolder.resolve();
             });
         } else {
-            console.log('no use!');
             initDataHolder.resolve();
         }
     }
@@ -125,7 +120,6 @@ function Minifier(pluginConfig) {
             initDataHolder.done(function() {
                 var pluginsForPath = pluginsByPath[path];
                 if (!pluginsForPath || pluginsForPath.length === 0) {
-                    console.log('No plugins for path ', path, ' - using input stream');
                     readable.setWrappedStream(inStream);
                     return;
                 }

@@ -14,7 +14,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
 
         stream: true,
 
-        transform: function(inStream, contentType, optimizerContext) {
+        transform: function(inStream, optimizerContext) {
 
             /*
             What this method will do:
@@ -27,10 +27,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
                 c. return a a file read stream for the optimized image written to disk
              */
              var path = optimizerContext.path;
-             contentType = contentType.toLowerCase();
-
              ok(typeof path === 'string', 'Path expected');
-
              return minifier.minify(inStream, path, optimizerContext);
         }
     });

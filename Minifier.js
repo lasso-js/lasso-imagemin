@@ -1,7 +1,7 @@
 var glob = require('glob');
 var DataHolder = require('raptor-async/DataHolder');
 var series = require('raptor-async/series');
-var through = require('through2');
+var vinylToStream = require('vinyl-to-stream');
 var Imagemin = require('imagemin');
 var nodePath = require('path');
 
@@ -130,33 +130,16 @@ function Minifier(pluginConfig) {
                         return;
                     }
 
+                    var imageReadable = vinylToStream();
                     var imagemin = new Imagemin()
                         .src(buffer);
-
-                    // NOTE: We have to do a little dance to convert a Gulp/Vinyl-style stream
-                    //       to a normal stream that emits Buffers. Imagemin was designed with
-                    //       Gulp in mind...
-
-                    var imageReadable = through();
-
-                    var imageOut = through.obj()
-                        .on('data', function(data) {
-                            imageReadable.push(data.contents);
-                        })
-                        .on('error', function(err) {
-                            readable.emit('error', err);
-                        })
-                        .on('end', function() {
-                            imageReadable.push(null);
-                        });
 
                     pluginsForPath.forEach(function(pluginConfig) {
                         imagemin.use(pluginConfig.plugin(pluginConfig.options));
                     });
 
-                    imagemin.use(imageOut);
-
-                    imagemin.run(function (err, files) {
+                    imagemin.use(imageReadable);
+                    imagemin.run(function(err) {
                         if (err) {
                             readable.emit('error', err);
                             imageReadable.push(null);

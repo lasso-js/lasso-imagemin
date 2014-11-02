@@ -37,5 +37,5 @@
         "registry": "https://registry.npmjs.org/"
     },
     "main": "optimizer-imagemin-plugin.js",
-    "version": "1.0.2"
+    "version": "1.0.3"
 }

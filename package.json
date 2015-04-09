@@ -1,14 +1,14 @@
 {
-    "name": "optimizer-imagemin",
+    "name": "lasso-imagemin",
     "description": "Minify images",
     "keywords": [
-        "optimizer",
-        "optimizer-plugin",
+        "lasso",
+        "lasso-plugin",
         "imagemin"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/raptorjs/optimizer-imagemin.git"
+        "url": "https://github.com/raptorjs/lasso-imagemin.git"
     },
     "scripts": {
         "test": "node_modules/.bin/mocha --ui bdd --reporter spec ./test && node_modules/.bin/jshint *.js"
@@ -30,13 +30,13 @@
         "chai": "~1.8.1",
         "jshint": "^2.4.4",
         "mocha": "~1.15.1",
-        "optimizer": "^1.3.3"
+        "lasso": "^1.3.3"
     },
     "license": "Apache License v2.0",
     "bin": {},
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
-    "main": "optimizer-imagemin-plugin.js",
+    "main": "lasso-imagemin-plugin.js",
     "version": "1.0.5"
 }

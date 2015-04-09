@@ -5,10 +5,10 @@ require('chai').should();
 var expect = require('chai').expect;
 var nodePath = require('path');
 
-var optimizerImagePlugin = require('../'); // Load this module just to make sure it works
-var optimizer = require('optimizer');
+var lassoImagePlugin = require('../'); // Load this module just to make sure it works
+var lasso = require('lasso');
 
-describe('optimizer-imagemin' , function() {
+describe('lasso-imagemin' , function() {
 
     beforeEach(function(done) {
         done();
@@ -16,14 +16,14 @@ describe('optimizer-imagemin' , function() {
 
     it('should minify a gif image', function(done) {
 
-        var pageOptimizer = optimizer.create({
+        var pageOptimizer = lasso.create({
                 fileWriter: {
                     fingerprintsEnabled: true,
                     outputDir: nodePath.join(__dirname, 'static')
                 },
                 plugins: [
                     {
-                        plugin: optimizerImagePlugin,
+                        plugin: lassoImagePlugin,
                         config: {
                             use: [
                                 {

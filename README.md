@@ -1,22 +1,22 @@
-optimizer-imagemin
+lasso-imagemin
 ==================
-This plugin for the [RaptorJS Optimizer](https://github.com/raptorjs/optimizer) allows the [imagemin](https://github.com/imagemin/imagemin) module to be used to minify GIF, PNG, JPG and SVG images during optimization.
+This plugin for the [RaptorJS Optimizer](https://github.com/raptorjs/lasso) allows the [imagemin](https://github.com/imagemin/imagemin) module to be used to minify GIF, PNG, JPG and SVG images during optimization.
 
 # Installation
 
 Install the plugin:
 
 ```
-npm install optimizer-imagemin --save
+npm install lasso-imagemin --save
 ```
 
 Enable the plugin:
 
 ```javascript
-require('optimizer').configure({
+require('lasso').configure({
     plugins: [
         {
-            plugin: 'optimizer-imagemin',
+            plugin: 'lasso-imagemin',
             config: {
                 ... // See below for config options
             }
@@ -44,10 +44,10 @@ If you intend to use a non-builtin plugin then you must `npm install` it first (
 ## Sample Configuration
 
 ```javascript
-require('optimizer').configure({
+require('lasso').configure({
     plugins: [
         {
-            plugin: 'optimizer-imagemin',
+            plugin: 'lasso-imagemin',
             config: {
                 use: [
                     {

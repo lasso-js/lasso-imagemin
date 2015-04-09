@@ -14,10 +14,10 @@ module.exports = function (pageOptimizer, pluginConfig) {
 
         stream: true,
 
-        transform: function(inStream, optimizerContext) {
-             var path = optimizerContext.path;
+        transform: function(inStream, lassoContext) {
+             var path = lassoContext.path;
              ok(typeof path === 'string', 'Path expected');
-             return minifier.minify(inStream, path, optimizerContext);
+             return minifier.minify(inStream, path, lassoContext);
         }
     });
 };

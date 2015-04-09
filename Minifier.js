@@ -114,9 +114,9 @@ function Minifier(pluginConfig) {
 
     init();
 
-    this.minify = function(inStream, path, optimizerContext) {
+    this.minify = function(inStream, path, lassoContext) {
 
-        var readable = optimizerContext.deferredStream(function() {
+        var readable = lassoContext.deferredStream(function() {
             initDataHolder.done(function() {
                 var pluginsForPath = pluginsByPath[path];
                 if (!pluginsForPath || pluginsForPath.length === 0) {

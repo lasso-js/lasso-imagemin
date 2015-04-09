@@ -1,13 +1,13 @@
 var ok = require('assert').ok;
 var Minifier = require('./Minifier');
 
-module.exports = function (pageOptimizer, pluginConfig) {
+module.exports = function (lasso, pluginConfig) {
 
     var types = pluginConfig.types || ['gif', 'jpeg', 'jpg', 'png', 'svg'];
 
     var minifier = new Minifier(pluginConfig);
 
-    pageOptimizer.addTransform({
+    lasso.addTransform({
         contentTypes: types,
 
         name: module.id,

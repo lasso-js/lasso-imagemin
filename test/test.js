@@ -16,7 +16,7 @@ describe('lasso-imagemin' , function() {
 
     it('should minify a gif image', function(done) {
 
-        var pageOptimizer = lasso.create({
+        var myLasso = lasso.create({
                 fileWriter: {
                     fingerprintsEnabled: true,
                     outputDir: nodePath.join(__dirname, 'static')
@@ -37,7 +37,7 @@ describe('lasso-imagemin' , function() {
                 ]
             });
 
-        pageOptimizer.optimizeResource(nodePath.join(__dirname, 'fixtures/test.gif'), function(err, result) {
+        myLasso.optimizeResource(nodePath.join(__dirname, 'fixtures/test.gif'), function(err, result) {
             if (err) {
                 return done(err);
             }

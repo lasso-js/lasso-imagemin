@@ -1,6 +1,6 @@
 lasso-imagemin
 ==================
-This plugin for the [Lasso.js](https://github.com/raptorjs/lasso) allows the [imagemin](https://github.com/imagemin/imagemin) module to be used to minify GIF, PNG, JPG and SVG images during optimization.
+This plugin for the [Lasso.js](https://github.com/lasso-js/lasso) allows the [imagemin](https://github.com/imagemin/imagemin) module to be used to minify GIF, PNG, JPG and SVG images during optimization.
 
 # Installation
 

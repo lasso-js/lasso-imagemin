@@ -42,7 +42,7 @@ describe('lasso-imagemin' , function() {
                 return done(err);
             }
             expect(result.outputFile).to.equal(
-                nodePath.join(__dirname, 'static/test-23919e20.gif'));
+                nodePath.join(__dirname, 'static/test-7752c891.gif'));
 
             done();
         });

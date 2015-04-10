@@ -30,7 +30,7 @@
         "chai": "~1.8.1",
         "jshint": "^2.4.4",
         "mocha": "~1.15.1",
-        "lasso": "^1.3.3"
+        "lasso": "^1.8.4"
     },
     "license": "Apache License v2.0",
     "bin": {},

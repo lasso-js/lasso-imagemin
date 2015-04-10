@@ -37,7 +37,7 @@ describe('lasso-imagemin' , function() {
                 ]
             });
 
-        myLasso.optimizeResource(nodePath.join(__dirname, 'fixtures/test.gif'), function(err, result) {
+        myLasso.lassoResource(nodePath.join(__dirname, 'fixtures/test.gif'), function(err, result) {
             if (err) {
                 return done(err);
             }

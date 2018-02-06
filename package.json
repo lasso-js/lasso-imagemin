@@ -38,5 +38,5 @@
         "registry": "https://registry.npmjs.org/"
     },
     "main": "lasso-imagemin-plugin.js",
-    "version": "1.0.7"
+    "version": "1.0.8"
 }

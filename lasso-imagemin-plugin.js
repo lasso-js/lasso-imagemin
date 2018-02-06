@@ -16,8 +16,7 @@ module.exports = function (lasso, pluginConfig) {
 
         transform: function(inStream, lassoContext) {
              var path = lassoContext.path;
-             ok(typeof path === 'string', 'Path expected');
-             return minifier.minify(inStream, path, lassoContext);
+             return typeof path === 'string' ? minifier.minify(inStream, path, lassoContext) : inStream;
         }
     });
 };
